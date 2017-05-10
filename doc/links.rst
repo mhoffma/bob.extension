@@ -23,3 +23,4 @@
 .. _zc.buildout: http://pypi.python.org/pypi/zc.buildout/
 .. _mr.developer: http://pypi.python.org/pypi/mr.developer/
 .. _bob.blitz: https://gitlab.idiap.ch/bob/bob.blitz
+.. _napoleon: https://sphinxcontrib-napoleon.readthedocs.io/en/latest/ 
