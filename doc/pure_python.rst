@@ -3,7 +3,7 @@
 .. Tue 15 Oct 17:41:52 2013
 
 ===========================
-Python Package Development 
+Python package development 
 ===========================
 
 Anatomy of a package
@@ -12,14 +12,14 @@ Anatomy of a package
 The best way to create your package is to download the skeleton that is described in this tutorial and build on it, modifying what you need.
 Fire-up a shell window, activate your bob environment (as explained `here <https://www.idiap.ch/software/bob/install>`_) and then do this:
 
-.. todo::
-    Update the command line not using tarball
 
 .. code-block:: sh
 
   $ wget https://gitlab.idiap.ch/bob/bob.extension/raw/master/bob/extension/data/bob.example.project.tar.bz2
   $ tar -xjf bob.example.project.tar.bz2
   $ cd bob.example.project
+
+.. todo:: Should we advise to clone ``bob.extension`` and then go to ``./bob.extension/examples/bob.example.project/`` instead ?
 
 The anatomy of a minimal package should look like the following:
 
