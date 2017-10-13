@@ -71,6 +71,10 @@ some other libraries that you may require into your environment.
 
         $ conda install bob
 
+    Alternatively, you can install ``bob-extras`` to install all maintained
+    |project| packages. This is not recommended though since it will pollute
+    your environment with the packages that you necessarily do not need.
+
 One important advantage of using conda_ and zc.buildout_ is that it does
 **not** require administrator privileges for setting up any of the above.
 Furthermore, you will be able to create distributable environments for each
