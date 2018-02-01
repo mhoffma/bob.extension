@@ -423,10 +423,6 @@ class Extension(DistutilsExtension):
 
       parameters['extra_link_args'] += pkg.other_libraries()
 
-    # add the -isystem to all system include dirs
-    for k in system_includes:
-      parameters['extra_compile_args'].extend(['-isystem', k])
-
     # Filter and make unique
     for key in parameters.keys():
 
