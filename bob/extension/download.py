@@ -19,13 +19,13 @@ def _untar(tar_file, directory, mode):
         import tarfile
         with tarfile.open(name=tar_file, mode='r:'+mode) as t:
             t.extractall(directory)
-    else:
-        if mode=="bz2":
-            import bz2
-            with bz2.BZ2File(tar_file) as t:
-                open(os.path.splitext(tar_file)[0:-1][0], 'wb').write(t.read())
-        else:
-           raise ValueError("It was not possible to extract {0}".format(tar_file))
+
+
+def _unbz2(bz2_file):
+    import bz2
+    with bz2.BZ2File(bz2_file) as t:
+        open(os.path.splitext(bz2_file)[0:-1][0], 'wb').write(t.read())
+
 
 def download_file(url, out_file):
   """Downloads a file from a given url
@@ -96,12 +96,17 @@ def download_and_unzip(urls, filename):
 
     # Uncompressing if it is the case
     ext = os.path.splitext(filename)[-1].lower()
-
+    header = os.path.splitext(filename)[0].lower()
     if ext == ".zip":
         logger.info("Unziping in {0}".format(filename))
         _unzip(filename, os.path.dirname(filename))
-
-    elif ext in [".gz", ".bz2"]:
+ 
+    elif header[-4:] == ".tar":
         logger.info("Untar/gzip in {0}".format(filename))
         _untar(filename, os.path.dirname(filename), mode=ext[1:])
+
+    elif ext == ".bz2":
+        logger.info("Unbz2 in {0}".format(filename))
+        _unbz2(filename)
+
 
